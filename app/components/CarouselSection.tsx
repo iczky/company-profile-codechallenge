@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@/components/ui/card";
+"use client";
 import {
   Carousel,
   CarouselContent,
@@ -20,7 +20,8 @@ export function CarouselSection() {
         }}
         plugins={[
           Autoplay({
-            delay: 2000,
+            delay: 2500,
+            stopOnInteraction: false,
           }),
         ]}>
         <CarouselContent className="-ml-[0px]">
