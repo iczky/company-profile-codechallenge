@@ -5,6 +5,7 @@ import { CarouselSection } from "./components/CarouselSection";
 import OurOffering from "./components/OurOffering";
 import ScaleOfProduct from "./components/ScaleOfProduct";
 import Reviews from "./components/Reviews";
+import ProcessProduct from "./components/ProcessProduct";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <OurOffering />
       <ScaleOfProduct />
       <Reviews />
+      <ProcessProduct />
     </>
   );
 }
