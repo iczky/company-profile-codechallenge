@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import {
   Carousel,
@@ -12,29 +13,27 @@ import Autoplay from "embla-carousel-autoplay";
 
 export function CarouselSection() {
   return (
-    <div className="w-screen h-screen">
-      <Carousel
-        className="w-full h-full bg-background-primary"
-        opts={{
-          loop: true,
-        }}
-        plugins={[
-          Autoplay({
-            delay: 2500,
-            stopOnInteraction: false,
-          }),
-        ]}>
-        <CarouselContent className="-ml-[0px]">
-          {carouselImgList.map((item, index) => (
-            <CarouselItem key={index} className="pl-[0px]">
-              <div className="pt-10">
-                <Image src={item} alt="item" width={1920} height={1080} />
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-      </Carousel>
-    </div>
+    <Carousel
+      className=" bg-background-primary"
+      opts={{
+        loop: true,
+      }}
+      plugins={[
+        Autoplay({
+          delay: 2500,
+          stopOnInteraction: false,
+        }),
+      ]}>
+      <CarouselContent className="-ml-[0px]">
+        {carouselImgList.map((item, index) => (
+          <CarouselItem key={index} className="pl-[0px]">
+            <div className="py-10">
+              <img src={item} alt="carousel image" />
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+    </Carousel>
   );
 }
 

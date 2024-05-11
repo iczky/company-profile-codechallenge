@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 const OurOffering = () => {
   return (
     <section className="flex justify-center text-center text-white pb-10">
-      <div className="mt-48 w-[75%] flex flex-col gap-8 items-center">
+      <div className="mt-5 w-[80%] flex flex-col gap-8 items-center">
         <h1 className="font-bold text-4xl">
           <strong>What do we do?</strong>
         </h1>
