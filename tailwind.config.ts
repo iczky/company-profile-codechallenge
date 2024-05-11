@@ -37,6 +37,7 @@ const config = {
       "background-primary": "#071D49",
       white: "#ffffff",
       black: "#000000",
+      "background-review": "rgb(245,245,244)",
     },
   },
   plugins: [require("tailwindcss-animate")],
