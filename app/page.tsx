@@ -9,6 +9,8 @@ import ProcessProduct from "./components/ProcessProduct";
 import OurPartner from "./components/OurPartner";
 import Teams from "./components/Teams";
 import FeatureNews from "./components/FeatureNews";
+import ContactUs from "./components/ContactUs";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -23,6 +25,8 @@ export default function Home() {
       <OurPartner />
       <Teams />
       <FeatureNews />
+      <ContactUs />
+      <Footer />
     </>
   );
 }
