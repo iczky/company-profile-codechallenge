@@ -6,6 +6,7 @@ import OurOffering from "./components/OurOffering";
 import ScaleOfProduct from "./components/ScaleOfProduct";
 import Reviews from "./components/Reviews";
 import ProcessProduct from "./components/ProcessProduct";
+import OurPartner from "./components/OurPartner";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <ScaleOfProduct />
       <Reviews />
       <ProcessProduct />
+      <OurPartner />
     </>
   );
 }

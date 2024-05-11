@@ -31,17 +31,19 @@ const Reviews = () => {
           <CarouselItem
             className="flex flex-col gap-5 basis-1/3 items-center"
             key={key}>
-            <div className="w-[100px] h-[100px] rounded-full overflow-hidden">
+            <div className="w-[200px] h-[200px] rounded-full overflow-hidden">
               <Image
                 src={img}
-                width={100}
-                height={100}
+                width={200}
+                height={200}
                 alt="Photo review"
                 className="w-full h-full object-cover"
               />
             </div>
-            <p>{description}</p>
-            <p>{name}</p>
+            <strong className="text-2xl font-medium w-[85%]">
+              {description}
+            </strong>
+            <strong className="text-lg font-semibold pt-5">{name}</strong>
             <p>{school}</p>
           </CarouselItem>
         ))}
