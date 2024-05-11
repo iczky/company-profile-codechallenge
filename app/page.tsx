@@ -8,6 +8,7 @@ import Reviews from "./components/Reviews";
 import ProcessProduct from "./components/ProcessProduct";
 import OurPartner from "./components/OurPartner";
 import Teams from "./components/Teams";
+import FeatureNews from "./components/FeatureNews";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <ProcessProduct />
       <OurPartner />
       <Teams />
+      <FeatureNews />
     </>
   );
 }

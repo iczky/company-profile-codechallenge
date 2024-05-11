@@ -38,6 +38,7 @@ const config = {
       white: "#ffffff",
       black: "#000000",
       "background-review": "rgb(245,245,244)",
+      "background-news": "#474747",
     },
   },
   plugins: [require("tailwindcss-animate")],
