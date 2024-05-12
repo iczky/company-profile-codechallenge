@@ -91,12 +91,16 @@ const Navbar = () => {
 
       {/* Navbar items */}
       <div className={`lg:flex gap-8 ${showMenu ? "block" : "hidden"}`}>
-        <NavItem path="/" currentPath={pathName}>
-          Home
-        </NavItem>
-        <NavItem path="/about-us" currentPath={pathName}>
-          About Us
-        </NavItem>
+        <Link href="/">
+          <NavItem path="/" currentPath={pathName}>
+            Home
+          </NavItem>
+        </Link>
+        <Link href="/about-us">
+          <NavItem path="/about-us" currentPath={pathName}>
+            About Us
+          </NavItem>
+        </Link>
         <Link href="/our-work" className="cursor-pointer">
           <NavItem path="/our-work" currentPath={pathName}>
             Our Work & Impact
