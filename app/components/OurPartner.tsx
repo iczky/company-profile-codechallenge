@@ -4,7 +4,6 @@ import Image from "next/image";
 const OurPartner = () => {
   return (
     <section
-      className=" w-screen"
       style={{
         backgroundImage: 'url("/rapat.webp")',
         backgroundSize: "cover",
