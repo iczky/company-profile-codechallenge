@@ -106,9 +106,11 @@ const Navbar = () => {
             Our Work & Impact
           </NavItem>
         </Link>
-        <NavItem path="/contact" currentPath={pathName}>
-          Contact Us
-        </NavItem>
+        <Link href="/contact-us">
+          <NavItem path="/contact-us" currentPath={pathName}>
+            Contact Us
+          </NavItem>
+        </Link>
         <NavItem path="/career" currentPath={pathName}>
           Career
         </NavItem>

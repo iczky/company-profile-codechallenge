@@ -3,9 +3,9 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white flex justify-between py-20 px-20">
+    <footer className="bg-black text-white flex flex-col items-center gap-10 py-5 px-5 md:flex-row md:justify-between">
       <Image src={"/logoFooter.png"} width={280} height={1} alt="Logo Footer" />
-      <div className="flex flex-col gap-2 underline font-light text-right">
+      <div className="flex flex-col gap-1 underline font-light text-right">
         <Link href="/">
           <p>Home</p>
         </Link>

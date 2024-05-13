@@ -1,4 +1,4 @@
-interface newsType {
+export interface newsType {
   img: string;
   title: string;
   desc: string;

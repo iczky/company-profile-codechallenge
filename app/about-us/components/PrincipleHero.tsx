@@ -3,20 +3,18 @@ import Image from "next/image";
 const PrincipleHero = () => {
   return (
     <section className="flex flex-col gap-3 md:flex-row-reverse">
-      <div className="w-full h-full">
-        <div className="w-auto h-max">
-          <Image
-            src={
-              "https://images.squarespace-cdn.com/content/v1/634516bde48db10ce13c8279/efca0a85-cd3d-4e4a-87fe-c1c2a9655875/DSC09993.jpg"
-            }
-            width={1000}
-            height={1000}
-            alt="Photo"
-            className="object-cover h-full w-full"
-          />
-        </div>
+      <div className="flex h-auto md:basis-[40%]">
+        <Image
+          src={
+            "https://images.squarespace-cdn.com/content/v1/634516bde48db10ce13c8279/efca0a85-cd3d-4e4a-87fe-c1c2a9655875/DSC09993.jpg"
+          }
+          width={1000}
+          height={1000}
+          alt="Photo"
+          className="object-cover h-full w-full"
+        />
       </div>
-      <div className="py-10 px-8 bg-white flex flex-col gap-10 text-black md:basis-10/12">
+      <div className="py-10 px-8 bg-white flex flex-col gap-10 text-black md:basis-[60%]">
         <h3 className="font-medium text-3xl">
           Our guiding principle when working with the government is that of
           collaboration.
