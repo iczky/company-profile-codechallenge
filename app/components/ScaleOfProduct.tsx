@@ -4,12 +4,12 @@ import Image from "next/image";
 
 const ScaleOfProduct = () => {
   return (
-    <section className="bg-white text-black py-16 px-10 flex flex-col gap-10 items-center">
+    <section className="bg-white text-black py-16 px-10 flex flex-col gap-10 items-center text-center border-none">
       <h1 className="font-bold text-3xl">The scale of our product</h1>
       <div className="flex gap-20 flex-col md:flex-row">
         {scaleImgList.map((item, index) => (
           <CardContainer key={index}>
-            <Image src={item.imagePath} height={150} width={150} alt="Photo" />
+            <Image src={item.imagePath} height={200} width={200} alt="Photo" />
             <h1 className="font-bold text-4xl mt-5">{item.achievement}</h1>
             <strong>{item.detail}</strong>
           </CardContainer>

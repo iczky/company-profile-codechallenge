@@ -3,11 +3,11 @@ import { Button } from "@/components/ui/button";
 const OurOffering = () => {
   return (
     <section className="flex justify-center text-center text-white pb-10">
-      <div className="mt-5 w-[80%] flex flex-col gap-8 items-center">
-        <h1 className="font-bold text-4xl">
+      <div className="mt-5 flex flex-col gap-8 items-center px-5">
+        <h1 className="font-bold text-2xl">
           <strong>What do we do?</strong>
         </h1>
-        <h4 className="text-2xl font-medium">
+        <h4 className="text-lg font-medium">
           We are building a technology-based ecosystem that enables inclusive
           access to quality learning content for teachers, supports data-driven
           decision-making in schools, and strengthens collaboration between

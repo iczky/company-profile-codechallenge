@@ -15,9 +15,9 @@ const MyTextInput: React.FC<formType> = ({ label, ...props }) => {
       <label htmlFor={props.id || props.name} className="text-sm font-light">
         {label}
       </label>
-      <input className="px-5 py-3" {...field} {...props} />
+      <input className="px-5 py-3 text-black" {...field} {...props} />
       {meta.touched && meta.error ? (
-        <div className="error">{meta.error}</div>
+        <div className="text-error pb-6">{meta.error}</div>
       ) : null}
     </div>
   );

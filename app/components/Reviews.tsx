@@ -11,8 +11,20 @@ import {
 import { reviewList } from "@/lib/reviewList";
 import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
+import { useRandomUserContext } from "@/hooks/RandomUserProvide";
+import { DataUser } from "@/lib/fetchRandomUser";
 
 const Reviews = () => {
+  const { getRandomUser } = useRandomUserContext();
+
+  const randomUserData: DataUser | null = getRandomUser();
+
+  if (!randomUserData) {
+    <div className="">Error</div>;
+  }
+
+  const { firstName, lastName, pict } = randomUserData;
+
   return (
     <Carousel
       opts={{
@@ -25,15 +37,13 @@ const Reviews = () => {
           stopOnInteraction: false,
         }),
       ]}
-      className="p-20 bg-background-review flex text-black text-center">
-      <CarouselContent className="overflow-visible flex gap-10">
-        {reviewList.map(({ img, name, school, description }, key) => (
-          <CarouselItem
-            className="flex flex-col gap-5 basis-1/3 items-center"
-            key={key}>
+      className="p-10 pb-16 border-none bg-background-review flex text-black text-center">
+      <CarouselContent>
+        {reviewList.map(({ school, description }, key) => (
+          <CarouselItem className="flex flex-col gap-5 items-center" key={key}>
             <div className="w-[200px] h-[200px] rounded-full overflow-hidden">
               <Image
-                src={img}
+                src={pict}
                 width={200}
                 height={200}
                 alt="Photo review"
@@ -43,7 +53,7 @@ const Reviews = () => {
             <strong className="text-2xl font-medium w-[85%]">
               {description}
             </strong>
-            <strong className="text-lg font-semibold pt-5">{name}</strong>
+            <strong className="text-lg font-semibold pt-5">{`${firstName} ${lastName}`}</strong>
             <p>{school}</p>
           </CarouselItem>
         ))}
@@ -53,20 +63,3 @@ const Reviews = () => {
 };
 
 export default Reviews;
-
-//   <ReviewContainer>
-//     <Image
-//       src={"/ReviewImg/pict1.jpg"}
-//       width={100}
-//       height={100}
-//       alt="Photo review"
-//     />
-//     <p>
-//       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa
-//       consequatur, culpa velit non id explicabo nemo officia porro a
-//       saepe doloribus sequi animi quae aliquam temporibus, cum expedita!
-//       Hic, sapiente!
-//     </p>
-//     <p>Vivi Wahyuni</p>
-//     <p>SDN Jarit 1, Kab. Lumajang, Jawa Timur</p>
-//   </ReviewContainer>

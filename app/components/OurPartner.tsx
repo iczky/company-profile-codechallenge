@@ -9,7 +9,7 @@ const OurPartner = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}>
-      <div className="bg-black bg-opacity-70 w-full h-full pt-28 pb-20 flex flex-col gap-16 items-center justify-center ">
+      <div className="bg-background-primary bg-opacity-70 w-full h-full pt-28 pb-20 flex flex-col gap-16 items-center text-center ">
         <h1 className="text-4xl font-semibold">Our Partner</h1>
         <Image
           src={"/tutwuri.png"}

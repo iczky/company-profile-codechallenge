@@ -39,6 +39,7 @@ const config = {
       black: "#000000",
       "background-review": "rgb(245,245,244)",
       "background-news": "#474747",
+      error: "#B90E0E",
     },
   },
   plugins: [require("tailwindcss-animate")],

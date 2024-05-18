@@ -3,14 +3,14 @@ import Image from "next/image";
 
 const Teams = () => {
   return (
-    <section className="py-20 px-20 gap-6 flex flex-col bg-background-review text-black items-center text-center">
-      <h1 className="text-5xl font-bold">Meet the Team</h1>
-      <p className="text-xl leading-loose w-[75%]">
+    <section className="px-5 py-10 gap-7 flex flex-col bg-background-review text-black items-center text-center">
+      <h1 className="text-2xl font-bold">Meet the Team</h1>
+      <p className="text-xl leading-loose ">
         We are a diverse group of 400+ professionals - from researchers,
         designers, and data analysts, to marketing strategists, and
         policymakers.
       </p>
-      <div className="flex gap-40">
+      <div className="flex flex-col gap-10">
         {teamList.map(({ img, name, role }, index) => (
           <div
             className="flex flex-col items-center justify-center pt-14"

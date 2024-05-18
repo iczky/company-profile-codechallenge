@@ -44,13 +44,13 @@ const FormInquiry = () => {
   };
 
   return (
-    <section className="px-6 py-20">
+    <section className="px-6 py-20 flex flex-col items-center text-white">
       <FormTitle />
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}>
-        <Form className="pt-10">
+        <Form className="pt-10 md:w-1/2 ">
           <MyTextInput
             id="fullName"
             label="Full Name"
@@ -90,7 +90,7 @@ const FormInquiry = () => {
           <div className="pt-5">
             <button
               type="submit"
-              className="bg-white text-black font-extralight text-lg py-8 px-7 rounded-full">
+              className="bg-white text-black font-extralight text-lg py-5 px-7 rounded-full">
               Submit
             </button>
           </div>
