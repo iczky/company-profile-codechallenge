@@ -15,7 +15,7 @@ interface User {
 }
 
 interface UserContextType {
-  users: User[];
+  users: User[] | null;
   getRandomUser: () => User | null;
 }
 
@@ -46,16 +46,20 @@ const fetchUsers = async (): Promise<User[]> => {
 export const UserProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [users, setUsers] = useState<User[]>(getStoredUsers());
+  const [users, setUsers] = useState<User[] | null>(null);
 
   useEffect(() => {
-    if (users.length === 0) {
-      fetchUsers().then((data) => setUsers(data));
+    try {
+      if (users === null) {
+        fetchUsers().then((users) => setUsers(users));
+      }
+    } catch (error) {
+      console.log(error, "========error==========");
     }
   }, [users]);
 
   const getRandomUser = (): User | null => {
-    if (users.length === 0) return null;
+    if (users === null) return null;
     const randomIndex = Math.floor(Math.random() * users.length);
     return users[randomIndex];
   };

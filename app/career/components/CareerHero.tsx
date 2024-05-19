@@ -5,7 +5,7 @@ const CareerHero = () => {
   return (
     <section className="flex flex-col text-center items-center gap-10 pb-20">
       <div className="flex flex-col gap-1">
-        <div className="flex gap-2">
+        <div className="flex gap-2 overflow-hidden md:overflow-auto">
           {careerHeroImgs.map((item, key) => (
             <Image src={item} width={200} height={300} alt="photo" key={key} />
           ))}

@@ -77,7 +77,7 @@ const Navbar = () => {
       <Sheet>
         <SheetTrigger>
           <div className="block lg:hidden">
-            <button onClick={toggleMenu}>
+            <div onClick={toggleMenu}>
               <svg
                 className="w-6 h-6"
                 fill="none"
@@ -91,7 +91,7 @@ const Navbar = () => {
                   d="M4 6h16M4 12h16m-7 6h7"
                 />
               </svg>
-            </button>
+            </div>
           </div>
         </SheetTrigger>
         <SheetContent className="h-full flex flex-col gap-10 bg-background-primary text-white">
