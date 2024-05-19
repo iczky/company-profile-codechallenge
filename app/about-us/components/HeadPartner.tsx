@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 const HeadPartner = () => {
   return (
@@ -18,9 +19,11 @@ const HeadPartner = () => {
           biggest state-owned technology and telecommunications company, Telkom
           Indonesia.
         </p>
-        <Button className="bg-white text-black font-light px-16 py-6 w-fit rounded-full">
-          Contact Us
-        </Button>
+        <Link href={"/contact-us"}>
+          <Button className="bg-white text-black font-light px-16 py-6 w-fit rounded-full">
+            Contact Us
+          </Button>
+        </Link>
       </div>
     </section>
   );

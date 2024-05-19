@@ -1,6 +1,6 @@
 import { string } from "yup";
 
-interface ApiResponse {
+export interface ApiResponse {
   results: User[];
 }
 

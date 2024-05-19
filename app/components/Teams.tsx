@@ -10,7 +10,7 @@ const Teams = () => {
         designers, and data analysts, to marketing strategists, and
         policymakers.
       </p>
-      <div className="flex flex-col gap-10">
+      <div className="flex flex-col md:flex-row md:justify-between gap-10">
         {teamList.map(({ img, name, role }, index) => (
           <div
             className="flex flex-col items-center justify-center pt-14"

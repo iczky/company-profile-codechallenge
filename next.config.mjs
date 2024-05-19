@@ -7,6 +7,11 @@ const nextConfig = {
         hostname: "images.squarespace-cdn.com",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "randomuser.me",
+        port: "",
+      },
     ],
   },
 };

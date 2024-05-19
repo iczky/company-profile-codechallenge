@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import RandomUserProvider from "@/hooks/RandomUserProvide";
+import { UserProvider } from "@/hooks/RandomUserProvide";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-background-primary text-white`}>
-        <RandomUserProvider>{children}</RandomUserProvider>
+        <UserProvider>{children}</UserProvider>
       </body>
     </html>
   );

@@ -59,7 +59,9 @@ const Navbar = () => {
 
   return (
     <nav className="flex justify-between w-full items-center font-extralight px-12 py-12">
-      <Image src={"/Logo.png"} width={180} height={100} alt="Logo Company" />
+      <Link href={"/"}>
+        <Image src={"/Logo.png"} width={180} height={100} alt="Logo Company" />
+      </Link>
 
       {/* Hamburger menu icon */}
       <div className="block lg:hidden">
@@ -111,9 +113,11 @@ const Navbar = () => {
             Contact Us
           </NavItem>
         </Link>
-        <NavItem path="/career" currentPath={pathName}>
-          Career
-        </NavItem>
+        <Link href="/career">
+          <NavItem path="/career" currentPath={pathName}>
+            Career
+          </NavItem>
+        </Link>
       </div>
     </nav>
   );

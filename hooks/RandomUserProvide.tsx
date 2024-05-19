@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  DataUser,
-  fetchRandomUser,
-  getStoredUsers,
-} from "@/lib/fetchRandomUser";
-import {
+import React, {
   createContext,
   ReactNode,
   useContext,
@@ -13,43 +8,69 @@ import {
   useState,
 } from "react";
 
-interface RandomUserContextType {
-  users: DataUser[];
-  getRandomUser: () => DataUser | null;
+interface User {
+  firstName: string;
+  lastName: string;
+  pict: string;
 }
 
-const RandomUserContext = createContext<RandomUserContextType | undefined>(
-  undefined
-);
+interface UserContextType {
+  users: User[];
+  getRandomUser: () => User | null;
+}
 
-export const RandomUserProvider: React.FC<{ children: ReactNode }> = ({
+const UserContext = createContext<UserContextType | undefined>(undefined);
+
+const getStoredUsers = (): User[] => {
+  const storedUsers = sessionStorage.getItem("randomUsers");
+  return storedUsers ? JSON.parse(storedUsers) : [];
+};
+
+const fetchUsers = async (): Promise<User[]> => {
+  try {
+    const response = await fetch("https://randomuser.me/api/?results=100");
+    const data = await response.json();
+    const formattedData = data.results.map((item: any) => ({
+      firstName: item.name.first,
+      lastName: item.name.last,
+      pict: item.picture.medium,
+    }));
+    sessionStorage.setItem("randomUsers", JSON.stringify(formattedData));
+    return formattedData;
+  } catch (error) {
+    console.error("Error fetching users:", error);
+    return [];
+  }
+};
+
+export const UserProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [users, setUsers] = useState<DataUser[]>(getStoredUsers());
+  const [users, setUsers] = useState<User[]>(getStoredUsers());
 
   useEffect(() => {
-    fetchRandomUser().then((data) => setUsers(data));
-  }, []);
+    if (users.length === 0) {
+      fetchUsers().then((data) => setUsers(data));
+    }
+  }, [users]);
 
-  const getRandomUser = (): DataUser | null => {
+  const getRandomUser = (): User | null => {
     if (users.length === 0) return null;
     const randomIndex = Math.floor(Math.random() * users.length);
     return users[randomIndex];
   };
 
   return (
-    <RandomUserContext.Provider value={{ users, getRandomUser }}>
+    <UserContext.Provider value={{ users, getRandomUser }}>
       {children}
-    </RandomUserContext.Provider>
+    </UserContext.Provider>
   );
 };
 
-export const useRandomUserContext = (): RandomUserContextType => {
-  const context = useContext(RandomUserContext);
-  if (context === undefined) {
-    throw new Error("Error");
+export const useUserContext = (): UserContextType => {
+  const context = useContext(UserContext);
+  if (!context) {
+    throw new Error("useUserContext must be used within a UserProvider");
   }
   return context;
 };
-
-export default RandomUserProvider;

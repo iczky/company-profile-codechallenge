@@ -10,7 +10,7 @@ const ProcessProduct = () => {
         high-quality technology, to maximizing user adoption, we ensure the
         products we build have high usability and meet our users’ needs.
       </p>
-      <div className="flex flex-col gap-10">
+      <div className="flex flex-col md:flex-row gap-10">
         {processList.map((item, index) => (
           <div
             className="flex flex-col gap-5 basis-1/4 items-center"

@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const ContactUs = () => {
   return (
@@ -6,9 +7,11 @@ const ContactUs = () => {
       <h1 className="text-3xl font-semibold">
         What challenge can we solve together next?
       </h1>
-      <Button className="bg-white text-black py-8 px-16 rounded-full font-extralight">
-        Contact Us
-      </Button>
+      <Link href={"/contact-us"}>
+        <Button className="bg-white text-black py-8 px-16 rounded-full font-extralight">
+          Contact Us
+        </Button>
+      </Link>
     </section>
   );
 };
