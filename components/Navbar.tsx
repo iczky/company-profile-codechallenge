@@ -48,6 +48,13 @@ import { useState } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
+import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 
 const Navbar = () => {
   const pathName = usePathname();
@@ -64,35 +71,79 @@ const Navbar = () => {
       </Link>
 
       {/* Hamburger menu icon */}
-      <div className="block lg:hidden">
-        <button onClick={toggleMenu}>
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg">
-            {showMenu ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16m-7 6h7"
-              />
-            )}
-          </svg>
-        </button>
-      </div>
 
       {/* Navbar items */}
-      <div className={`lg:flex gap-8 ${showMenu ? "block" : "hidden"}`}>
+
+      <Sheet>
+        <SheetTrigger>
+          <div className="block lg:hidden">
+            <button onClick={toggleMenu}>
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              </svg>
+            </button>
+          </div>
+        </SheetTrigger>
+        <SheetContent className="h-full flex flex-col gap-10 bg-background-primary text-white">
+          <div className="lg:flex-row flex flex-col gap-8 h-full items-center justify-center ">
+            <Link href="/">
+              <NavItem path="/" currentPath={pathName}>
+                Home
+              </NavItem>
+            </Link>
+            <Link href="/about-us">
+              <NavItem path="/about-us" currentPath={pathName}>
+                About Us
+              </NavItem>
+            </Link>
+            <DropdownMenu>
+              <DropdownMenuTrigger>
+                <NavItem path="/our-work" currentPath={pathName}>
+                  Our Work & Impact
+                </NavItem>
+                <DropdownMenuContent className="bg-background-primary border-none">
+                  <DropdownMenuItem>
+                    <Link href="/product-update" className="cursor-pointer ">
+                      <NavItem path="/product-update" currentPath={pathName}>
+                        Product Updates
+                      </NavItem>
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <Link href="/our-work" className="cursor-pointer ">
+                      <NavItem path="/our-work" currentPath={pathName}>
+                        Our Work & Impact
+                      </NavItem>
+                    </Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenuTrigger>
+            </DropdownMenu>
+            <Link href="/contact-us">
+              <NavItem path="/contact-us" currentPath={pathName}>
+                Contact Us
+              </NavItem>
+            </Link>
+            <Link href="/career">
+              <NavItem path="/career" currentPath={pathName}>
+                Career
+              </NavItem>
+            </Link>
+          </div>
+        </SheetContent>
+      </Sheet>
+
+      <div className="lg:flex gap-8 hidden ">
         <Link href="/">
           <NavItem path="/" currentPath={pathName}>
             Home
@@ -103,11 +154,29 @@ const Navbar = () => {
             About Us
           </NavItem>
         </Link>
-        <Link href="/our-work" className="cursor-pointer">
-          <NavItem path="/our-work" currentPath={pathName}>
-            Our Work & Impact
-          </NavItem>
-        </Link>
+        <DropdownMenu>
+          <DropdownMenuTrigger>
+            <NavItem path="/our-work" currentPath={pathName}>
+              Our Work & Impact
+            </NavItem>
+            <DropdownMenuContent className="bg-background-primary border-none">
+              <DropdownMenuItem>
+                <Link href="/product-update" className="cursor-pointer ">
+                  <NavItem path="/product-update" currentPath={pathName}>
+                    Product Updates
+                  </NavItem>
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href="/our-work" className="cursor-pointer ">
+                  <NavItem path="/our-work" currentPath={pathName}>
+                    Our Work & Impact
+                  </NavItem>
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenuTrigger>
+        </DropdownMenu>
         <Link href="/contact-us">
           <NavItem path="/contact-us" currentPath={pathName}>
             Contact Us
