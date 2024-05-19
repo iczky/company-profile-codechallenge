@@ -1,6 +1,5 @@
 "use client";
 
-import ReviewContainer from "@/components/ReviewContainer";
 import {
   Carousel,
   CarouselContent,
