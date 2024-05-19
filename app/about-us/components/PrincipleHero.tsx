@@ -19,7 +19,7 @@ const PrincipleHero = () => {
           Our guiding principle when working with the government is that of
           collaboration.
         </h3>
-        <div className="flex flex-col gap-5 text-xs font-light leading-loose">
+        <div className="flex flex-col gap-5 text-xs md:text-base font-light leading-loose">
           <p>
             This means that we go beyond mere feature development - we bring
             findings and recommendations for appropriate technology

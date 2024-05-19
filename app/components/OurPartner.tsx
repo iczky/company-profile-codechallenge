@@ -12,7 +12,7 @@ const OurPartner = () => {
       <div className="bg-background-primary bg-opacity-70 w-full h-full pt-28 pb-20 flex flex-col gap-16 items-center text-center ">
         <h1 className="text-4xl font-semibold">Our Partner</h1>
         <Image
-          src={"/tutwuri.png"}
+          src={"/tutwuri.webp"}
           width={153}
           height={153}
           alt="tut wuri"

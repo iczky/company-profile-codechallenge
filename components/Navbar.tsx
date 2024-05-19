@@ -1,47 +1,3 @@
-// "use client";
-
-// import Image from "next/image";
-// import { usePathname } from "next/navigation";
-
-// const Navbar = () => {
-//   const pathName = usePathname();
-
-//   return (
-//     <nav className="flex justify-between w-full items-center font-extralight px-12 py-12">
-//       <Image src={"/Logo.png"} width={180} height={100} alt="Logo Company" />
-//       <div className="flex gap-8">
-//         <NavItem path="/" currentPath={pathName}>
-//           Home
-//         </NavItem>
-//         <NavItem path="/about-us" currentPath={pathName}>
-//           About Us
-//         </NavItem>
-//         <NavItem path="/our-work" currentPath={pathName}>
-//           Our Work & Impact
-//         </NavItem>
-//         <NavItem path="/contact" currentPath={pathName}>
-//           Contact Us
-//         </NavItem>
-//         <NavItem path="/career" currentPath={pathName}>
-//           Career
-//         </NavItem>
-//       </div>
-//     </nav>
-//   );
-// };
-
-// interface navItemProps {
-//   path: string;
-//   currentPath: string;
-//   children: JSX.Element | string;
-// }
-
-// const NavItem: React.FC<navItemProps> = ({ path, currentPath, children }) => {
-//   return <p className={path === currentPath ? "underline" : ""}>{children}</p>;
-// };
-
-// export default Navbar;
-
 "use client";
 
 import { useState } from "react";
@@ -67,7 +23,7 @@ const Navbar = () => {
   return (
     <nav className="flex justify-between w-full items-center font-extralight px-12 py-12">
       <Link href={"/"}>
-        <Image src={"/Logo.png"} width={180} height={100} alt="Logo Company" />
+        <Image src={"/Logo.webp"} width={180} height={100} alt="Logo Company" />
       </Link>
 
       {/* Hamburger menu icon */}

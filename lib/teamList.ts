@@ -6,17 +6,17 @@ interface teamType {
 
 export const teamList: teamType[] = [
   {
-    img: "/teamImg/IBAM.jpg",
+    img: "/teamImg/IBAM.webp",
     name: "Ibrahim Arief",
     role: "Chief Technology Officer",
   },
   {
-    img: "/teamImg/C-SUITES.jpg",
+    img: "/teamImg/C-SUITES.webp",
     name: "Prayudi Utomo",
     role: "Chief Product Officer",
   },
   {
-    img: "/teamImg/Kevin.jpg",
+    img: "/teamImg/Kevin.webp",
     name: "Kevin Emeraldi",
     role: "Chief Operating Officer",
   },

@@ -30,7 +30,7 @@ const Reviews = () => {
         }),
       ]}
       className="p-10 pb-16 border-none bg-background-review flex text-black text-center">
-      <CarouselContent>
+      <CarouselContent className="md:flex">
         {reviewList.map(({ school, description }, key) => {
           const randomUser = getRandomUser();
           if (!randomUser) {
@@ -40,7 +40,7 @@ const Reviews = () => {
           const { firstName, lastName, pict } = randomUser;
           return (
             <CarouselItem
-              className="flex flex-col gap-5 items-center"
+              className="flex flex-col gap-5 items-center md:basis-1/3"
               key={key}>
               <div className="w-[200px] h-[200px] rounded-full overflow-hidden">
                 <Image
@@ -51,11 +51,13 @@ const Reviews = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <strong className="text-2xl font-medium w-[85%]">
-                {description}
-              </strong>
-              <strong className="text-lg font-semibold pt-5">{`${firstName} ${lastName}`}</strong>
-              <p>{school}</p>
+              <div className="flex flex-col gap-5 items-center">
+                <strong className="text-2xl font-medium w-[85%] md:w-[50%]">
+                  {description}
+                </strong>
+                <strong className="text-lg font-semibold pt-5">{`${firstName} ${lastName}`}</strong>
+                <p>{school}</p>
+              </div>
             </CarouselItem>
           );
         })}

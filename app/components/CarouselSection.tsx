@@ -27,8 +27,13 @@ export function CarouselSection() {
       <CarouselContent className="-ml-[0px]">
         {carouselImgList.map((item, index) => (
           <CarouselItem key={index} className="pl-[0px]">
-            <div className="py-10">
-              <img src={item} alt="carousel image" />
+            <div className="flex h-auto w-auto py-10">
+              <Image
+                src={item}
+                width={1920}
+                height={1000}
+                alt="carousel image"
+              />
             </div>
           </CarouselItem>
         ))}
