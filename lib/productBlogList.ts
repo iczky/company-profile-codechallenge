@@ -1,6 +1,10 @@
-import { newsType } from "./newsList";
+interface blogType {
+  img: string;
+  title: string;
+  desc: string;
+}
 
-export const productBlogList: newsType[] = [
+export const productBlogList: blogType[] = [
   {
     img: "https://images.squarespace-cdn.com/content/v1/634516bde48db10ce13c8279/1696832732010-LSCGVIKE6K0OGUKH3D4Q/20231009_ARKAS+4_THUMBNAIL.jpg",
     title: "Latest Innovation in School Budget Management through ARKAS 4",
