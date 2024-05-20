@@ -1,5 +1,6 @@
 import { teamList } from "@/lib/teamList";
 import Image from "next/image";
+import Link from "next/link";
 
 const Teams = () => {
   return (
@@ -10,8 +11,8 @@ const Teams = () => {
         designers, and data analysts, to marketing strategists, and
         policymakers.
       </p>
-      <div className="flex flex-col md:flex-row md:justify-between gap-10">
-        {teamList.map(({ img, name, role }, index) => (
+      <div className="flex flex-col md:flex-row md:justify-between gap-10 md:gap-20">
+        {teamList.map(({ img, name, role, linkedin }, index) => (
           <div
             className="flex flex-col items-center justify-center pt-14"
             key={index}>
@@ -22,14 +23,18 @@ const Teams = () => {
               alt="Photo C"
               className="rounded-full"
             />
-            <h2 className="font-bold text-2xl underline pt-10">{name}</h2>
+            <Link href={linkedin} target="_blank">
+              <h2 className="font-bold text-2xl underline pt-10">{name}</h2>
+            </Link>
             <p className="text-2xl font-medium pt-4">{role}</p>
           </div>
         ))}
       </div>
-      <button className="mt-10 py-4 px-20 text-white bg-black rounded-full font-light">
-        Learn More About Us
-      </button>
+      <Link href="/about-us">
+        <button className="mt-10 py-4 px-20 text-white bg-black rounded-full font-light">
+          Learn More About Us
+        </button>
+      </Link>
     </section>
   );
 };

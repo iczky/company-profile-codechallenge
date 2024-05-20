@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { productImg } from "@/lib/productImgList";
 import Image from "next/image";
+import Link from "next/link";
 
 const Products = () => {
   return (
@@ -8,7 +9,7 @@ const Products = () => {
       <h1 className="text-5xl font-semibold text-center py-24">
         Our Work & Impact
       </h1>
-      {productImg.map(({ imgHero, imgLogo, desc }, index) => (
+      {productImg.map(({ imgHero, imgLogo, desc, url }, index) => (
         <div
           className={`flex flex-col md:flex-row ${
             index % 2 === 0 ? "md:flex-row-reverse" : ""
@@ -30,9 +31,11 @@ const Products = () => {
               <p className="text-3xl font-semibold">{desc}</p>
             </div>
             <div>
-              <Button className="bg-black text-white p-16 text-xl rounded-full">
-                Learn More
-              </Button>
+              <Link href={url} target="_blank">
+                <Button className="bg-black text-white p-16 text-xl rounded-full">
+                  Learn More
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

@@ -110,6 +110,11 @@ const Navbar = () => {
             Product Updates
           </NavItem>
         </Link>
+        <Link href="/teams">
+          <NavItem path="/contact-us" currentPath={pathName}>
+            Teams
+          </NavItem>
+        </Link>
         <Link href="/contact-us">
           <NavItem path="/contact-us" currentPath={pathName}>
             Contact Us

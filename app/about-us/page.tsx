@@ -6,6 +6,7 @@ import ValuesHero from "./components/ValuesHero";
 import HeadPartner from "./components/HeadPartner";
 import Footer from "@/components/Footer";
 import { Metadata } from "next";
+import OurMilestone from "./components/OurMilestone";
 
 export const metadata: Metadata = {
   title: "About Us - Govtech",
@@ -21,6 +22,7 @@ const AboutUs = () => {
         <PrincipleHero />
       </div>
       <TeamsHero />
+      <OurMilestone />
       <ValuesHero />
       <HeadPartner />
       <Footer />

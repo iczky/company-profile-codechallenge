@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const OurOffering = () => {
   return (
@@ -13,9 +14,11 @@ const OurOffering = () => {
           decision-making in schools, and strengthens collaboration between
           Universities, Industry Partners, & Graduates.
         </h4>
-        <Button className="bg-white text-black w-fit rounded-full font-extralight p-8 text-lg">
-          Learn more about our work
-        </Button>
+        <Link href="/our-work">
+          <Button className="bg-white text-black w-fit rounded-full font-extralight p-8 text-lg">
+            Learn more about our work
+          </Button>
+        </Link>
       </div>
     </section>
   );

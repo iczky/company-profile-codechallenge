@@ -28,7 +28,7 @@ const fetchUsers = async (): Promise<User[]> => {
     const formattedData = data.results.map((item: any) => ({
       firstName: item.name.first,
       lastName: item.name.last,
-      pict: item.picture.medium,
+      pict: item.picture.large,
     }));
     sessionStorage.setItem("randomUsers", JSON.stringify(formattedData));
     return formattedData;
