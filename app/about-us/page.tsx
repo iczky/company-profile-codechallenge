@@ -5,6 +5,12 @@ import TeamsHero from "./components/TeamsHero";
 import ValuesHero from "./components/ValuesHero";
 import HeadPartner from "./components/HeadPartner";
 import Footer from "@/components/Footer";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us - Govtech",
+  description: "Govtech Company Profile",
+};
 
 const AboutUs = () => {
   return (

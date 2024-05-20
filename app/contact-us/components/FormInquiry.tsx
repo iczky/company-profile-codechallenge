@@ -83,7 +83,7 @@ const FormInquiry = () => {
             <label htmlFor="message" className="text-sm font-light">
               Message
             </label>
-            <Field name="message" id="message" type="textarea">
+            <Field name="message" id="message" as="textarea" type="textarea">
               {/* <textarea cols={30} rows={5} className="text-black px-5 py-3" /> */}
             </Field>
           </div>

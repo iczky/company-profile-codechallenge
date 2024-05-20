@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import {
   DropdownMenu,
@@ -13,6 +13,7 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 
 const Navbar = () => {
+  const { push } = useRouter();
   const pathName = usePathname();
   const [showMenu, setShowMenu] = useState(false);
 
@@ -62,29 +63,16 @@ const Navbar = () => {
                 About Us
               </NavItem>
             </Link>
-            <DropdownMenu>
-              <DropdownMenuTrigger>
-                <NavItem path="/our-work" currentPath={pathName}>
-                  Our Work & Impact
-                </NavItem>
-                <DropdownMenuContent className="bg-background-primary border-none">
-                  <DropdownMenuItem>
-                    <Link href="/product-update" className="cursor-pointer ">
-                      <NavItem path="/product-update" currentPath={pathName}>
-                        Product Updates
-                      </NavItem>
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <Link href="/our-work" className="cursor-pointer ">
-                      <NavItem path="/our-work" currentPath={pathName}>
-                        Our Work & Impact
-                      </NavItem>
-                    </Link>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenuTrigger>
-            </DropdownMenu>
+            <Link href="/our-work" className="cursor-pointer ">
+              <NavItem path="/our-work" currentPath={pathName}>
+                Our Work & Impact
+              </NavItem>
+            </Link>
+            <Link href="/product-update" className="cursor-pointer">
+              <NavItem path="/product-update" currentPath={pathName}>
+                Product Updates
+              </NavItem>
+            </Link>
             <Link href="/contact-us">
               <NavItem path="/contact-us" currentPath={pathName}>
                 Contact Us
@@ -110,29 +98,18 @@ const Navbar = () => {
             About Us
           </NavItem>
         </Link>
-        <DropdownMenu>
-          <DropdownMenuTrigger>
-            <NavItem path="/our-work" currentPath={pathName}>
-              Our Work & Impact
-            </NavItem>
-            <DropdownMenuContent className="bg-background-primary border-none">
-              <DropdownMenuItem>
-                <Link href="/product-update" className="cursor-pointer ">
-                  <NavItem path="/product-update" currentPath={pathName}>
-                    Product Updates
-                  </NavItem>
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem>
-                <Link href="/our-work" className="cursor-pointer ">
-                  <NavItem path="/our-work" currentPath={pathName}>
-                    Our Work & Impact
-                  </NavItem>
-                </Link>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenuTrigger>
-        </DropdownMenu>
+        <Link href="/our-work" className="cursor-pointer ">
+          <NavItem path="/our-work" currentPath={pathName}>
+            Our Work & Impact
+          </NavItem>
+        </Link>
+        <Link
+          href="/product-update"
+          className="cursor-pointer pointer-events-auto">
+          <NavItem path="/product-update" currentPath={pathName}>
+            Product Updates
+          </NavItem>
+        </Link>
         <Link href="/contact-us">
           <NavItem path="/contact-us" currentPath={pathName}>
             Contact Us

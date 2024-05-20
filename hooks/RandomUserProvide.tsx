@@ -21,11 +21,6 @@ interface UserContextType {
 
 const UserContext = createContext<UserContextType | undefined>(undefined);
 
-const getStoredUsers = (): User[] => {
-  const storedUsers = sessionStorage.getItem("randomUsers");
-  return storedUsers ? JSON.parse(storedUsers) : [];
-};
-
 const fetchUsers = async (): Promise<User[]> => {
   try {
     const response = await fetch("https://randomuser.me/api/?results=100");
