@@ -8,6 +8,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Govtech Edu Indonesia",
   description: "Govtech Company Profile",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
