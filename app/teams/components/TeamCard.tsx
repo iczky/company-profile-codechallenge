@@ -29,9 +29,9 @@ const TeamCard: React.FC<TeamCardType> = ({
         <p className="text-lg font-semibold">{`${firstName} ${lastName}`}</p>
         <p>{role}</p>
       </div>
-      <div className="flex gap-5 hover:scale-50">
-        <Linkedin />
-        <Twitter />
+      <div className="flex gap-5">
+        <Linkedin className="hover:scale-110" />
+        <Twitter className="hover:scale-110" />
       </div>
     </div>
   );
